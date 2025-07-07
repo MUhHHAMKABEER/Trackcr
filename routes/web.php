@@ -8,9 +8,13 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 
 
-Route::get('/', function () {
-    return redirect()->route('login');
+// Route::get('/', function () {
+//     return redirect()->route('login');
+// });
+Route::get('/ping', function () {
+    return 'Laravel is alive!';
 });
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
