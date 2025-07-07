@@ -7,10 +7,10 @@ use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', function () {
+    return redirect()->route('login');
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
